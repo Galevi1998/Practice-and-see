@@ -1,7 +1,7 @@
 from typing import Optional, List
 from collections import deque
 
-
+#Im gal and im the best
 class Node:
     def __init__(self, val: int = 0, neighbors: Optional[List["Node"]] = None):
         self.val = val
