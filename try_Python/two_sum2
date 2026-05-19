@@ -1,0 +1,47 @@
+from pickle import NONE
+from typing import List
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dictonary = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in dictonary:
+                return [i, dictonary[complement]]
+            dictonary[nums[i]] = i
+
+
+            
+        # for num in nums :
+        #     if dictonary[num] != NONE and  : 
+        #O(nlogn) solution
+        # indexEnd = len(nums)-1
+        # indexStart =0
+        # nums.sort()
+        # print(nums)
+        # print(f"start : {nums[indexStart]} end : {nums[indexEnd]}")
+        # while(indexStart<indexEnd):
+        #     if nums[indexEnd]+nums[indexStart]==target :
+        #         return [indexStart,indexEnd]
+        #     if nums[indexEnd]+nums[indexStart] > target : 
+        #         print("lower end")
+        #         indexEnd -=1
+        #     else : 
+        #         print("lower start")
+        #         indexStart+=1
+        # return
+
+
+def main():
+    sol = Solution()
+    nums = [0,4,3,1,9,5,7,2]
+
+    print("Original list:", nums)
+
+    k = sol.twoSum(nums,2)
+    
+    print("Number of unique elements:", k)
+
+if __name__ == "__main__":
+    main()
